@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -8,21 +8,26 @@ using Web.Models;
 
 namespace Web.Controllers
 {
-    public class HomeController : Controller
+    public class NewController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Public()
         {
-            return View();
+            return Content("<html><body>Hello This a Method reply with Html</body></html>", "text/html");
         }
 
-        public IActionResult Privacy()
+         public IActionResult View()
         {
-            return View();
+            return Content("Hello This a Method reply with text!");
         }
 
-        public IActionResult Welcome()
+         public IActionResult Json()
         {
-            return Content("Hello This is a Welcome page!");
+            return Json(new
+                {
+                    name = "This is a Json file",
+                    type = "Json"
+
+                });
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
