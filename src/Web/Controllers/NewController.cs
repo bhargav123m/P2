@@ -15,7 +15,7 @@ namespace Web.Controllers
             return Content("<html><body>Hello This a Method reply with Html</body></html>", "text/html");
         }
 
-         public IActionResult View()
+         public IActionResult Text()
         {
             return Content("Hello This a Method reply with text!");
         }
@@ -26,9 +26,15 @@ namespace Web.Controllers
                 {
                     name = "This is a Json file",
                     type = "Json"
-
                 });
         }
+
+        public IActionResult Function()
+        {
+            return View();
+        }
+
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
